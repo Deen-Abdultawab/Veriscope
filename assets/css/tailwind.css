@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* assets/fonts.css */
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('@/assets/fonts/MuseoSans_500.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@layer base {
+    *,
+    ::before, 
+    ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: clamp(0.75em, 1.111vw, 1em);
+    }      
+}
+
+body {
+    font-family: 'MuseoSans';
+}
+
+.transitionEffect {
+    transition: all 0.3s linear;
+}
+
+@theme {
+    --breakpoint-tab: 900px;
+    --breakpoint-mob: 560px;
+    --font-MuseoSans: 'MuseoSans', sans-serif;
+    --color-headerPrimary: #10162F;
+    --color-black: #000000;
+}
+
+@layer components {
+    .basic-flex {
+        @apply flex items-center
+    }
+
+    .nav-link {
+        @apply text-[#004D61] cursor-pointer
+    }
+
+    .small-texts {
+        @apply text-[#004D61] font-MuseoSans font-[400] text-[1rem] leading-[150%]
+    }
+
+    .btn {
+        @apply bg-[#0F4590] rounded-[12.5rem] px-[1.5rem] py-[0.75rem] text-[#FFFFFF] cursor-pointer
+    }
+
+    .header-texts {
+        @apply font-MuseoSans font-[600] text-[3rem] leading-[120%]
+    }
+
+    input, textarea {
+        @apply focus:outline-0
+    }
+
+    .input-field .input {
+        @apply border-b pb-[0.4rem] border-b-[#072042] text-[#072042] text-[0.875rem] mb-[1.25rem] w-full
+    }
+
+    .footer-links li, .social-link {
+        @apply cursor-pointer
+    }
+
+    .bullet-points span {
+        @apply text-[#072042]
+    }
+
+    .bullet-points li {
+        @apply flex items-center gap-[0.25rem]
+    }
+
+    .input-row {
+        @apply w-full
+    }
+
+    .input-field-contact {
+        @apply flex flex-col gap-[0.813rem]
+    }
+
+    .input-field-contact label {
+        @apply text-[#072042] text-[1.38rem]
+    }
+
+    .input-field-contact input,  .input-field-contact textarea {
+        @apply border border-[#B5B5B5] rounded-[0.75rem] bg-[#E8E8E8] py-[1rem] px-[1.5rem] text-[#6B6B6B]
+    }
+
+    .social-link {
+        @apply w-[1.2rem] h-[1.2rem]
+    }
+}
