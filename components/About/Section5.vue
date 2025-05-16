@@ -7,8 +7,8 @@
         >
             <NuxtImg src="/images/team-member.png" class="w-full"/>
             <div class="text-[#072042] mt-[0.75rem]">
-                <h4 class="header-texts text-[1.34rem] mb-[0.5rem]">{{ member.name }}</h4>
-                <p class="text-[#0C3670] small-texts">
+                <h4 class="header-texts text-[1.34rem] mb-[0.5rem] max-md:text-[0.8rem]">{{ member.name }}</h4>
+                <p class="text-[#0C3670] small-texts max-md:text-[0.7rem]">
                     {{ member.role }}
                 </p>
             </div>
