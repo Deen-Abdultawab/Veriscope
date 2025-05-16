@@ -1,35 +1,49 @@
 <template>
-   <section class="w-full py-[9rem] bg-[#E6F8FD]">
-    <div class="w-[83.33%] mx-auto max-w-[1440px]">
+  <section class="w-full py-[4rem] sm:py-[6rem] md:py-[9rem] bg-[#E6F8FD]">
+    <div class="w-[90%] sm:w-[85%] md:w-[83.33%] mx-auto max-w-[1440px]">
       <article 
-      v-for="service in services"
-      :key="service.id"
-      class="py-[3.313rem] w-[91.5%] grid grid-cols-2 items-center gap-[6.4rem]">
-        <div class="text-[#072042] flex flex-col gap-[1rem]" :class="service.inverted? 'order-2': ''">
-            <h2 class="header-texts">
-                {{ service.title }}
-            </h2>
-            <p class="small-texts text-[#072042]">
-                {{ service.subtitle }} <br> {{ service.descr }}
-            </p>
-            <ul class="bullet-points flex flex-col gap-[0.5rem]">
-                <li 
-                v-for="bullet in service.bullets"
-                >
-                    <NuxtImg src="/images/logo-icon.svg"/>
-                    <span class="small-texts">{{ bullet }}</span>
-                </li>
-            </ul>
-            <button class="btn w-fit" v-if="service.showBtn">
-                Book Discovery Call
-            </button>
+        v-for="service in services"
+        :key="service.id"
+        class="py-[2rem] sm:py-[2.5rem] md:py-[3.313rem] w-full md:w-[91.5%] grid grid-cols-1 lg:grid-cols-2 items-center gap-[2rem] sm:gap-[3rem] md:gap-[6.4rem] mx-auto"
+      >
+        <div 
+          class="text-[#072042] flex flex-col gap-[0.75rem] sm:gap-[1rem]" 
+          :class="service.inverted ? 'lg:order-2' : ''"
+        >
+          <h2 class="text-[#072042] font-MuseoSans font-[600] text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] leading-[120%]">
+            {{ service.title }}
+          </h2>
+          <p class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%]">
+            {{ service.subtitle }} <br> {{ service.descr }}
+          </p>
+          <ul class="flex flex-col gap-[0.5rem]">
+            <li 
+              v-for="(bullet, index) in service.bullets"
+              :key="index"
+              class="flex items-start gap-[0.5rem]"
+            >
+              <NuxtImg src="/images/logo-icon.svg" class="w-[16px] h-[16px] mt-[0.25rem] flex-shrink-0"/>
+              <span class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%]">
+                {{ bullet }}
+              </span>
+            </li>
+          </ul>
+          <button 
+            v-if="service.showBtn"
+            class="bg-[#114C9E] text-white font-MuseoSans font-[300] text-[1rem] leading-[160%] px-[1.5rem] sm:px-[2rem] py-[0.75rem] rounded-[0.5rem] w-fit hover:bg-[#0d3a7a] transition-colors mt-[1rem]"
+          >
+            Book Discovery Call
+          </button>
         </div>
-        <div class="">
-            <NuxtImg :src="`/images/${service.imgSrc}`" class="w-full h-full object-cover"/>
+        <div class="order-first lg:order-none">
+          <NuxtImg 
+            :src="`/images/${service.imgSrc}`" 
+            class="w-full h-full object-cover rounded-[0.5rem]"
+          />
         </div>
       </article>
     </div>
-   </section>
+  </section>
 </template>
 
 <script setup>
@@ -133,9 +147,4 @@ const services = [
         showBtn: true
     }
 ]
-
 </script>
-
-<style lang="scss" scoped>
-
-</style>

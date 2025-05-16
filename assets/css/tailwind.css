@@ -47,6 +47,10 @@ body {
         @apply text-[#004D61] cursor-pointer
     }
 
+    .nav-links li {
+        @apply text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%] capitalize hover:underline
+    }
+
     .small-texts {
         @apply text-[#004D61] font-MuseoSans font-[400] text-[1rem] leading-[150%]
     }
