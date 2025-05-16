@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar />
-        <ContactSection1 />
+        <UiComingSoon />
         <HomepageSection7 />
         <Footer />
     </div>
