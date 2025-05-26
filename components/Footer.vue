@@ -32,7 +32,7 @@
               class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity"
             />
           </a>
-          <nuxt-link to="">
+          <nuxt-link to="https://web.facebook.com/VeriscopeDigital" target="_blank">
             <NuxtImg src="/icons/facebook.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
           </nuxt-link>
           <nuxt-link to="https://www.instagram.com/veriscope_digital?igsh=MWJoemswcmtid2pndg==" target="_blank">
