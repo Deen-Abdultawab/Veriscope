@@ -1,14 +1,10 @@
 <template>
     <div>
-        <Navbar />
         <AboutSection1 />
         <AboutSection2 />
         <AboutSection3 />
         <AboutSection4 />
-        <AboutSection5 />
-        <HomepageSection7 />
-        <Footer />
-
+        <!-- <AboutSection5 /> -->
     </div>
 </template>
 

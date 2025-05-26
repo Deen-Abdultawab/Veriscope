@@ -1,9 +1,7 @@
 <template>
     <div>
-        <Navbar />
-        <UiComingSoon />
-        <HomepageSection7 />
-        <Footer />
+        <CaseStudiesHeader />
+        <CaseStudiesCaseLists />
     </div>
 </template>
 

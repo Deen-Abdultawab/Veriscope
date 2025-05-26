@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-[90%] md:w-[83.3%] mx-auto max-w-[1440px] py-[0.7rem] basic-flex justify-between relative">
+  <nav class="w-[90%] md:w-[83.3%] mx-auto max-w-[1440px] py-[0.7rem] basic-flex justify-between relative z-[99999]">
     <!-- Logo -->
     <div class="logo max-w-[8rem] md:max-w-[10.1rem]">
       <NuxtLink to="/">
@@ -19,7 +19,7 @@
         <NuxtLink to="/CaseStudies">Case Studies</NuxtLink>
       </li>
       <li class="nav-link small-texts">
-        <NuxtLink to="/Blog">Blog</NuxtLink>
+        <NuxtLink to="/Blogs">Blog</NuxtLink>
       </li>
     </ul>
 
@@ -55,7 +55,7 @@
           <NuxtLink to="/CaseStudies" @click="isOpen = false">Case Studies</NuxtLink>
         </li>
         <li class="nav-link small-texts">
-          <NuxtLink to="/Blog" @click="isOpen = false">Blog</NuxtLink>
+          <NuxtLink to="/Blogs" @click="isOpen = false">Blog</NuxtLink>
         </li>
         <li class="nav-link small-texts">
           <NuxtLink to="/Contact" @click="isOpen = false">

@@ -1,11 +1,7 @@
 <template>
     <div>
-        <Navbar />
         <ServicesSection1 />
         <ServicesSection2 />
-        <HomepageSection7 />
-        <Footer />
-
     </div>
 </template>
 

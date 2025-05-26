@@ -52,15 +52,15 @@ body {
     }
 
     .small-texts {
-        @apply text-[#004D61] font-MuseoSans font-[400] text-[1rem] leading-[150%]
+        @apply text-[#004D61] font-MuseoSans font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%]
     }
 
     .btn {
-        @apply bg-[#0F4590] rounded-[12.5rem] px-[1.5rem] py-[0.75rem] text-[#FFFFFF] cursor-pointer
+        @apply bg-[#0F4590] rounded-[12.5rem] px-[1rem] sm:px-[1.5rem] py-[0.5rem] sm:py-[0.75rem] text-[#FFFFFF] cursor-pointer text-[0.875rem] sm:text-[1rem]
     }
 
     .header-texts {
-        @apply font-MuseoSans font-[600] text-[3rem] leading-[120%]
+        @apply font-MuseoSans font-[600] text-[2rem] sm:text-[2.5rem] md:text-[3rem] leading-[120%]
     }
 
     input, textarea {
@@ -68,7 +68,7 @@ body {
     }
 
     .input-field .input {
-        @apply border-b pb-[0.4rem] border-b-[#072042] text-[#072042] text-[0.875rem] mb-[1.25rem] w-full
+        @apply border-b pb-[0.4rem] border-b-[#072042] text-[#072042] text-[0.875rem] mb-[1rem] sm:mb-[1.25rem] w-full
     }
 
     .footer-links li, .social-link {
@@ -88,18 +88,30 @@ body {
     }
 
     .input-field-contact {
-        @apply flex flex-col gap-[0.813rem]
+        @apply flex flex-col gap-[0.5rem] sm:gap-[0.813rem]
     }
 
     .input-field-contact label {
-        @apply text-[#072042] text-[1.38rem]
+        @apply text-[#072042] text-[1.1rem] sm:text-[1.38rem]
     }
 
-    .input-field-contact input,  .input-field-contact textarea {
-        @apply border border-[#B5B5B5] rounded-[0.75rem] bg-[#E8E8E8] py-[1rem] px-[1.5rem] text-[#6B6B6B]
+    .input-field-contact input, .input-field-contact textarea {
+        @apply border border-[#B5B5B5] rounded-[0.5rem] sm:rounded-[0.75rem] bg-[#E8E8E8] py-[0.75rem] sm:py-[1rem] px-[1rem] sm:px-[1.5rem] text-[#6B6B6B] text-[0.875rem] sm:text-[1rem]
     }
 
     .social-link {
-        @apply w-[1.2rem] h-[1.2rem]
+        @apply w-[1rem] sm:w-[1.2rem] h-[1rem] sm:h-[1.2rem]
+    }
+
+    .details article h3 {
+        @apply font-MuseoSans font-[600] text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] leading-[120%] text-[#072042] mb-[0.75rem] sm:mb-[1.125rem]
+    }
+
+    .details article p, .details article li {
+        @apply text-[#004D61] font-MuseoSans font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%] text-[#072042]
+    }
+
+    .details article ul {
+        @apply list-disc pl-[1rem] sm:pl-[1.5rem]
     }
 }
