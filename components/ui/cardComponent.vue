@@ -2,7 +2,7 @@
   <article 
     class="flex gap-[2.88rem] pb-[2.5rem] border-b border-[#6087BE] max-md:flex-col"
   >
-    <div class="w-[20rem] h-[12.5rem] max-md:w-full overflow-hidden">
+    <div class="w-[20rem] h-[12.5rem] max-md:w-full overflow-hidden" v-if="item?.mainImage">
       <NuxtImg 
         :src="urlFor(item?.mainImage).width(800).url()" 
         class="w-full h-full object-cover rounded-[12px]" 
@@ -16,7 +16,7 @@
         {{ item?.title }}
       </h3>
       <p class="small-texts">
-        {{ item?.introduction }}
+        {{ item?.introduction || item?.vision}}
       </p>
       <NuxtLink 
         :to="`/${route}/${item?.slug?.current}`" 

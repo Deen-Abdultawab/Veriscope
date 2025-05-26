@@ -52,7 +52,7 @@
                 {{ truncateText(blog?.introduction, 120) }}
               </p>
               <NuxtLink 
-                :to="`/Blogs/${blog?.slug?.current}/${index}`" 
+                :to="`/Blogs/${blog?.slug?.current}`" 
                 class="btn w-fit text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1rem] md:px-[1.5rem]"
               >
                 Read More
