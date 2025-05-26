@@ -11,10 +11,10 @@
               <nuxt-link to="/About">about</nuxt-link>
             </li>
             <li class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%] capitalize hover:underline">
-              case studies
+              <nuxt-link to="/caseStudies">case studies</nuxt-link>
             </li>
             <li class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%] capitalize hover:underline">
-              blog
+              <nuxt-link to="/Blogs">blog</nuxt-link>
             </li>
           </ul>
           <p class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%]">
@@ -22,11 +22,28 @@
           </p>
         </div>
         <div class="flex gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem]">
-          <NuxtImg src="/icons/whatsapp.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
-          <NuxtImg src="/icons/facebook.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
-          <NuxtImg src="/icons/instagram.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
-          <NuxtImg src="/icons/x.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
-          <NuxtImg src="/icons/linkedin.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
+          <a
+            href="https://wa.me/2349137978816"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <NuxtImg
+              src="/icons/whatsapp.svg"
+              class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity"
+            />
+          </a>
+          <nuxt-link to="">
+            <NuxtImg src="/icons/facebook.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
+          </nuxt-link>
+          <nuxt-link to="https://www.instagram.com/veriscope_digital?igsh=MWJoemswcmtid2pndg==" target="_blank">
+            <NuxtImg src="/icons/instagram.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
+          </nuxt-link>
+          <nuxt-link to="https://x.com/veriscope_" target="_blank">
+            <NuxtImg src="/icons/x.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
+          </nuxt-link>
+          <nuxt-link to="https://www.linkedin.com/company/veriscope-digital/" target="_blank">
+            <NuxtImg src="/icons/linkedin.svg" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] hover:opacity-80 transition-opacity" />
+          </nuxt-link>
         </div>
       </div>
       <div class="mt-[5rem] sm:mt-[7rem] md:mt-[10rem]">
