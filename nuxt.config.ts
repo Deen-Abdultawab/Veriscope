@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
 
-    vite: {
+  vite: {
     plugins: [
       tailwindcss(),
     ],
@@ -22,6 +22,14 @@ export default defineNuxtConfig({
     dataset: 'production',
     useCdn: true,
     apiVersion: '2023-05-03',
+  },
+
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      ]
+    }
   },
 
   css: ['~/assets/css/tailwind.css']
