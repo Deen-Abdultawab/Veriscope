@@ -21,7 +21,7 @@
                     <h2 class="header-text text-[1.75rem] sm:text-[2rem] text-[#FFFFFF] mb-[1.5rem] md:mb-[2rem]">
                         {{ data?.title }}
                     </h2>
-                    <div class="w-full h-[25rem] sm:h-[35rem] md:h-[50rem] rounded-[1rem] md:rounded-[2rem] overflow-hidden border grid place-items-center bg-[white]">
+                    <div class="w-full h-[25rem] sm:h-[35rem] md:h-[50rem] rounded-[1rem] md:rounded-[2rem] overflow-hidden border grid place-items-center bg-[white]" v-if="data?.mainImage">
                         <NuxtImg 
                            :src="urlFor(data?.mainImage).width(800).url()" 
                             :alt="data?.title"
@@ -120,7 +120,13 @@ const query = `*[_type == "caseStudy" && slug.current == $slugParam][0]{
 
 const { data, pending, error, refresh } = await useAsyncData(
   `caseStudy-${route.params.slug}`,
-  () => useSanityClient().fetch(query, { slugParam: route.params.slug })
+  () => useSanityClient().fetch(query, { slugParam: route.params.slug }),
+   {
+    // Key changes to fix routing delay:
+    server: false, // Fetch only on client-side
+    lazy: true,    // Don't block navigation
+    // immediate: false // Don't fetch on component mount
+  }
 )
 
 const getNextBlog = async (currentSlug) => {

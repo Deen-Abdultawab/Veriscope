@@ -103,7 +103,13 @@ const query = `*[_type == "blogPost" && slug.current == $slugParam][0]{
 
 const { data, pending, error, refresh } = await useAsyncData(
   `blogPost-${route.params.slug}`,
-  () => useSanityClient().fetch(query, { slugParam: route.params.slug })
+  () => useSanityClient().fetch(query, { slugParam: route.params.slug }),
+   {
+    // Key changes to fix routing delay:
+    server: false, // Fetch only on client-side
+    lazy: true,    // Don't block navigation
+    // immediate: false // Don't fetch on component mount
+  }
 )
 
 const getNextBlog = async (currentSlug) => {

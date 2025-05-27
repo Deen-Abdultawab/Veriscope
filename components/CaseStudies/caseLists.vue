@@ -122,6 +122,12 @@ const {
     const result = await sanityClient.fetch(query)
     totalCaseStudies.value = result.total
     return result.caseStudies
+  },
+   {
+    // Key changes to fix routing delay:
+    server: false, // Fetch only on client-side
+    lazy: true,    // Don't block navigation
+    immediate: false // Don't fetch on component mount
   }
 )
 

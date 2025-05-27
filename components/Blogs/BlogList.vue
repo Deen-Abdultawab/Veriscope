@@ -113,7 +113,14 @@ const {
   const result = await sanityClient.fetch(query)
   totalPosts.value = result.total
   return result.posts
-})
+},
+ {
+    // Key changes to fix routing delay:
+    server: false, // Fetch only on client-side
+    lazy: true,    // Don't block navigation
+    immediate: false // Don't fetch on component mount
+  }
+)
 
 // Computed
 const showLoadMore = computed(() => {
