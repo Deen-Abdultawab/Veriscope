@@ -10,9 +10,7 @@
             <p class="small-texts text-[#FFFFFF]">
                Get your free strategy session and let’s discuss how Veriscope can help you attract more customers, build your brand, and grow with purpose.
             </p>
-            <button class="btn bg-[#FFFFFF] text-[#072042] w-fit mx-auto">
-               Book Discovery Call
-            </button>
+            <UiCTAButton textCol="#072042" bG="#FFFFFF" class="w-fit mx-auto !mt-0"/>
          </div>
       </div>
    </section>

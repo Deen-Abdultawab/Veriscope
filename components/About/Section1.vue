@@ -8,9 +8,7 @@
             <p class="!text-[#072042] small-texts">
                We work with startups, SMEs, and growth-stage brands to deliver digital strategies that are sharp, scalable, and grounded in data. Whether you're trying to get more leads, increase your visibility, or simply stop wasting money on guesswork, we're here to help you build real momentum online.
             </p>
-            <button class="btn mt-[1.5rem] sm:mt-[1.75rem] md:mt-[2rem] w-full sm:w-fit">
-                Contact Us
-            </button>
+            <UiCTAButton />
         </div>
         <div class="w-full h-full order-1 md:order-2">
             <NuxtImg src="/images/logo3d.png" class="w-full max-w-[400px] md:max-w-none mx-auto"/>

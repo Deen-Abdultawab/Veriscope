@@ -18,7 +18,7 @@
                 </div>
                 <div class="flex justify-end">
                     <button class="btn">
-                        Book Discovery Call
+                        Send Message
                     </button>
                 </div>
             </form>

@@ -30,9 +30,9 @@
           </ul>
           <button 
             v-if="service.showBtn"
-            class="bg-[#114C9E] text-white font-MuseoSans font-[300] text-[1rem] leading-[160%] px-[1.5rem] sm:px-[2rem] py-[0.75rem] rounded-[0.5rem] w-fit hover:bg-[#0d3a7a] transition-colors mt-[1rem]"
+            class="bg-[#114C9E] text-white font-MuseoSans font-[300] text-[1rem] leading-[160%] px-[1.5rem] sm:px-[2rem] py-[0.75rem] rounded-[0.5rem] w-fit hover:bg-[#0d3a7a] transition-colors mt-[1rem] cusor-pointer"
           >
-            Book Discovery Call
+            <nuxt-link to="/Contact">Contact Us</nuxt-link>
           </button>
         </div>
         <div class="order-first lg:order-none">

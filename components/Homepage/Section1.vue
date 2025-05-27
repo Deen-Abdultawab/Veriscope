@@ -7,9 +7,7 @@
             <p class="!text-[#072042] small-text">
                 We help businesses attract, convert, and retain customers with performance-based marketing. Your customers are online. Let's help them find you.
             </p>
-            <button class="btn mt-[1.5rem] md:mt-[2rem] w-full md:w-fit">
-                Book Discovery Call
-            </button>
+            <UiCTAButton />
         </div>
         <div class="w-full h-full">
             <NuxtImg src="/images/img1.png" class="w-full"/>

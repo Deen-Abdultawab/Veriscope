@@ -14,9 +14,7 @@
         <p class="!text-[#072042] small-text text-center lg:text-left">
           Whether you're a startup gaining traction or an SME ready to scale, Veriscope helps you reach the right audience, generate better leads, and drive real results. We work best with individuals ready to build their personal brands and businesses ready to reach their growth potential.
         </p>
-        <button class="btn mt-[1.5rem] md:mt-[2rem] w-full lg:w-fit !bg-[#B5C8E1] !text-[#072042] mx-auto lg:mx-0">
-          Book Discovery Call
-        </button>
+        <UiCTAButton bG="#B5C8E1" textCol="#072042"/>
       </div>
     </div>
   </section>
