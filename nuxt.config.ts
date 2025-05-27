@@ -26,6 +26,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      titleTemplate: '%s - Veriscope',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
       ]

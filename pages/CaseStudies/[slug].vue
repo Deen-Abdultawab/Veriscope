@@ -86,6 +86,10 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'Case Study',
+})
+
 definePageMeta({
   layout: 'custom'
 })

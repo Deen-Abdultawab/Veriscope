@@ -78,6 +78,10 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'Blog',
+})
+
 definePageMeta({
   layout: 'custom'
 })

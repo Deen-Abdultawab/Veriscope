@@ -9,6 +9,28 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'About',
+  meta: [
+    {
+        name: 'keywords',
+        content: 'SEO, PPC advertising, social media marketing, content strategy, email automation, website design, digital strategy, Google ads, Meta ads, marketing services, growth solutions'
+    },
+    { 
+        name: 'description', 
+        content: 'Versace One is your growth-focused digital marketing partner — combining strategy, data, and creativity to drive real results.' 
+    },
+    { 
+        property: 'og:title', 
+        content: 'Versace One | Strategic Growth Marketing' 
+    },
+    { 
+        property: 'og:description', 
+        content: 'We help businesses scale with SEO, social media, PPC, and more.' 
+    },
+  ]
+})
+
 
 </script>
 

@@ -6,7 +6,9 @@
 </template>
 
 <script setup>
-
+useHead({
+    title: 'Blogs',
+})
 
 
 </script>
