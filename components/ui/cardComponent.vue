@@ -44,5 +44,30 @@ const props = defineProps({
 </script>
 
 <style scoped>
+.btn {
+  transition: all 0.3s ease;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
 
+article {
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.header-texts {
+  line-height: 1.3;
+}
+
+.small-texts {
+  line-height: 1.5;
+}
 </style>

@@ -30,35 +30,12 @@
       <!-- Success State -->
       <template v-else>
         <div class="flex flex-col gap-[1rem] md:gap-[1.5rem] mb-[2.5rem] md:mb-[4.5rem]">
-          <article 
-            v-for="(blog, index) in data" 
+          <UiCardComponent 
+            v-for="blog in data" 
             :key="blog._id"
-            class="flex gap-[1rem] md:gap-[2.88rem] pb-[1.5rem] md:pb-[2.5rem] border-b border-[#6087BE] max-md:flex-col"
-          >
-            <div class="w-full md:w-[20rem] h-[10rem] sm:h-[12.5rem] overflow-hidden">
-              <NuxtImg 
-                :src="urlFor(blog?.mainImage).width(800).url()" 
-                class="w-full h-full object-cover rounded-[8px] md:rounded-[12px]" 
-                :alt="blog?.title"
-                placeholder
-                loading="lazy"
-              />
-            </div>
-            <div class="w-full h-full flex-1 flex flex-col gap-[0.75rem] md:gap-[1rem] text-[#072042]">
-              <h3 class="header-texts text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem]">
-                {{ blog?.title }}
-              </h3>
-              <p class="small-texts text-[0.875rem] md:text-[1rem]">
-                {{ truncateText(blog?.introduction, 120) }}
-              </p>
-              <NuxtLink 
-                :to="`/Blogs/${blog?.slug?.current}`" 
-                class="btn w-fit text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1rem] md:px-[1.5rem]"
-              >
-                Read More
-              </NuxtLink>
-            </div>
-          </article>
+            route="Blogs"
+            :item="blog"
+          />
         </div>
 
         <!-- Pagination -->
@@ -166,13 +143,6 @@ onMounted(async ()=>{
   &:hover:not(:disabled) {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-}
-
-article {
-  transition: transform 0.2s ease;
-  &:hover {
-    transform: translateY(-2px);
   }
 }
 
