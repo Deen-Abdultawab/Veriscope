@@ -23,7 +23,7 @@
               class="flex items-start gap-[0.5rem]"
             >
               <NuxtImg src="/images/logo-icon.svg" class="w-[16px] h-[16px] mt-[0.25rem] flex-shrink-0"/>
-              <span class="text-[#072042] font-MuseoSans font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%]">
+              <span class="text-[#072042] font-MuseoSansLight font-[300] text-[0.875rem] sm:text-[1rem] leading-[160%]">
                 {{ bullet }}
               </span>
             </li>

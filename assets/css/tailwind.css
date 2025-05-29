@@ -8,6 +8,11 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'MuseoSansLight';
+    src: url('../fonts/Museo300-Regular.otf') format('truetype');
+}
+
 @layer base {
     *,
     ::before, 
@@ -26,6 +31,10 @@ body {
     font-family: 'MuseoSans';
 }
 
+p, li {
+    font-family: 'MuseoSansLight' !important;
+}
+
 .transitionEffect {
     transition: all 0.3s linear;
 }
@@ -34,6 +43,7 @@ body {
     --breakpoint-tab: 900px;
     --breakpoint-mob: 560px;
     --font-MuseoSans: 'MuseoSans', sans-serif;
+    --font-MuseoSansLight: 'MuseoSansLight', sans-serif;
     --color-headerPrimary: #10162F;
     --color-black: #000000;
 }
@@ -52,7 +62,7 @@ body {
     }
 
     .small-texts {
-        @apply text-[#004D61] font-MuseoSans font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%]
+        @apply text-[#004D61] font-MuseoSansLight font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%]
     }
 
     .btn {
@@ -108,7 +118,7 @@ body {
     }
 
     .details article p, .details article li {
-        @apply text-[#004D61] font-MuseoSans font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%] text-[#072042]
+        @apply text-[#004D61] font-MuseoSansLight font-[400] text-[0.875rem] sm:text-[1rem] leading-[150%] text-[#072042]
     }
 
     .details article ul {
