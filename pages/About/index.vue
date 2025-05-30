@@ -18,11 +18,11 @@ useHead({
     },
     { 
         name: 'description', 
-        content: 'Versace One is your growth-focused digital marketing partner — combining strategy, data, and creativity to drive real results.' 
+        content: 'Veriscope is your growth-focused digital marketing partner, combining strategy, data, and creativity to drive real results.' 
     },
     { 
         property: 'og:title', 
-        content: 'Versace One | Strategic Growth Marketing' 
+        content: 'Veriscope | Strategic Growth Marketing' 
     },
     { 
         property: 'og:description', 

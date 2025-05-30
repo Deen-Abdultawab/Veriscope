@@ -19,14 +19,14 @@
          </div>
     </div>
     <div class="w-[90%] sm:w-[85%] md:w-[83.33%] mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-2 gap-[3rem] sm:gap-[5rem] md:gap-[11.3rem] text-[#072042] mt-[4.1rem]">
-         <div class="text-center md:text-left order-2">
+         <div class="text-center md:text-left md:order-2">
             <h3 class="header-texts mb-[1.5rem] sm:mb-[2rem] md:mb-[2.69rem] text-[1.5rem] sm:text-[1.63rem] md:text-[1.75rem]">Firdaous Ibrahim</h3>
             <NuxtImg 
               src="/images/firdaus.jpg" 
               class="w-[12rem] sm:w-[15rem] md:w-[19.16rem] mx-auto md:mx-0"
             />
          </div>
-         <div class="order-1">
+         <div class="md:order-1">
             <h3 class="header-texts text-[1.5rem] sm:text-[1.63rem] md:text-[1.75rem] mb-[1.5rem] sm:mb-[2rem] md:mb-[2.69rem]">Head of Digital Marketing</h3>
             <p class="small-texts text-[1rem] sm:text-[1.13rem] md:text-[1.25rem]">
                Firdaous is an experienced Digital Marketing Professional with a strong background in Data Analysis. He served as a Digital Analyst for MTN Nigeria, where he provided actionable insights that helped drive campaign performance and improve KPIs. He has also worked with other leading brands, using marketing data to optimize content and campaign strategies across various platforms.

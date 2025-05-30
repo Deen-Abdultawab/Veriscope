@@ -5,6 +5,9 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'Contact',
+})
 
 
 </script>
