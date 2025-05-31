@@ -33,5 +33,13 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    public: {
+      sanityProjectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+      sanityDataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
+      sanityApiVersion: process.env.NUXT_PUBLIC_SANITY_API_VERSION,
+    }
+  },
+
   css: ['~/assets/css/tailwind.css']
 })
