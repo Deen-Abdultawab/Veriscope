@@ -5,9 +5,9 @@ export const useSanityClient = () => {
   const config = useRuntimeConfig()
 
   return createClient({
-    projectId: config.public.sanityProjectId,
-    dataset: config.public.sanityDataset,
-    apiVersion: config.public.sanityApiVersion,
+    projectId: config.public.sanityProjectId || 'w7s43vlg',
+    dataset: config.public.sanityDataset || 'production',
+    apiVersion: config.public.sanityApiVersion || '2023-05-03',
     useCdn: true,
   })
 }
