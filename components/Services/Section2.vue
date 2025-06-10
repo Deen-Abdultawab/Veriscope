@@ -86,7 +86,7 @@ const services = [
             'Facebook/Instagram lead ads',
             'Landing page + ad copy that converts'
         ],
-        imgSrc: 'ads-about.png',
+        imgSrc: 'ad.png',
         inverted: false,
         showBtn: false
     },
