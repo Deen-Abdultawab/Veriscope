@@ -17,13 +17,6 @@ export default defineNuxtConfig({
     ],
   },
 
-  sanity: {
-    projectId: 'w7s43vlg',
-    dataset: 'production',
-    useCdn: true,
-    apiVersion: '2023-05-03',
-  },
-
   app: {
     head: {
       titleTemplate: '%s - Veriscope',
@@ -34,10 +27,15 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    RESEND_API_KEY: process.env.NUXT_RESEND_API_KEY,
+    SANITY_PROJECT_ID: process.env.NUXT_SANITY_PROJECT_ID,
+    SANITY_DATASET: process.env.NUXT_SANITY_DATASET,
+    SANITY_API_VERSION: process.env.NUXT_SANITY_API_VERSION,
+
     public: {
-      sanityProjectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
-      sanityDataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
-      sanityApiVersion: process.env.NUXT_PUBLIC_SANITY_API_VERSION,
+      SANITY_PROJECT_ID: process.env.NUXT_SANITY_PROJECT_ID,
+      SANITY_DATASET: process.env.NUXT_SANITY_DATASET,
+      SANITY_API_VERSION: process.env.NUXT_SANITY_API_VERSION,
     }
   },
 
