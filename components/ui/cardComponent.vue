@@ -16,7 +16,7 @@
         {{ item?.title }}
       </h3>
       <p class="small-texts">
-        {{ item?.introduction || item?.vision}}
+        {{ item?.introduction || item?.vision || item?.challenge}}
       </p>
       <NuxtLink 
         :to="`/${route}/${item?.slug?.current}`" 

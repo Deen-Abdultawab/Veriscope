@@ -61,7 +61,7 @@ const sanityClient = useSanityClient()
 const router = useRouter()
 
 // Configuration
-const pageSize = 3
+const pageSize = 5
 const currentPage = ref(1)
 const totalPosts = ref(0)
 

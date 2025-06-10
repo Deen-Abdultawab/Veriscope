@@ -39,11 +39,11 @@
                     <h3>Client</h3>
                     <p>{{ data?.client }}</p>
                 </article>
-                <article>
+                <article v-if="data?.vision?.length > 0">
                     <h3>Vision</h3>
                     <p>{{ data?.vision }}</p>
                 </article>
-                <article>
+                <article v-if="data?.challenge?.length > 0">
                     <h3>Challenge</h3>
                     <p>{{ data?.challenge }}</p>
                 </article>
@@ -154,7 +154,6 @@ const getNextBlog = async (currentSlug) => {
   const currentIdx = blogs.findIndex(b => b.slug.current === currentSlug)
   const nextIdx = (currentIdx + 1) % blogs.length
   nextCase.value = blogs[nextIdx]
-  console.log(nextCase.value)
   return blogs[nextIdx]
 }
 

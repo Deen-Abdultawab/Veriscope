@@ -4,25 +4,9 @@
       <h2 class="header-texts text-[#072042] mb-[1.5rem] md:mb-[2.5rem] text-[1.75rem] md:text-[2rem]">All Case Studies</h2>
 
       <!-- Loading State -->
-      <template v-if="pending && currentPage === 1">
+      <template v-if="pending">
         <div class="mb-[2.5rem] md:mb-[4.5rem]">
-          <div class="flex flex-col gap-[1rem] md:gap-[1.5rem]">
-            <article 
-              v-for="n in 3" 
-              :key="n"
-              class="flex gap-[1.5rem] md:gap-[2.88rem] pb-[1.5rem] md:pb-[2.5rem] border-b border-[#6087BE] max-md:flex-col"
-            >
-              <div class="w-full md:w-[20rem] h-[10rem] sm:h-[12.5rem] bg-gray-100 rounded-[0.75rem] md:rounded-[12px] animate-pulse"></div>
-              <div class="flex-1 flex flex-col gap-[0.75rem] md:gap-4">
-                <div class="h-6 md:h-8 bg-gray-100 rounded w-3/4 animate-pulse"></div>
-                <div class="space-y-2">
-                  <div class="h-3 md:h-4 bg-gray-100 rounded animate-pulse"></div>
-                  <div class="h-3 md:h-4 bg-gray-100 rounded animate-pulse w-5/6"></div>
-                </div>
-                <div class="h-8 md:h-10 bg-gray-100 rounded w-[7.5rem] md:w-32 animate-pulse mt-1 md:mt-2"></div>
-              </div>
-            </article>
-          </div>
+          <UiSkeletonLoader/>
         </div>
       </template>
 
@@ -68,7 +52,7 @@ const sanityClient = useSanityClient()
 const { urlFor } = useSanityImage()
 
 // Pagination
-const pageSize = 3
+const pageSize = 5
 const currentPage = ref(1)
 const totalCaseStudies = ref(0)
 
