@@ -4,7 +4,7 @@
       <h2 class="header-texts text-[#072042] mb-[1.5rem] md:mb-[2.5rem] text-[1.75rem] md:text-[2rem]">All Case Studies</h2>
 
       <!-- Loading State -->
-      <template v-if="pending">
+      <template v-if="pending && currentPage === 1">
         <div class="mb-[2.5rem] md:mb-[4.5rem]">
           <UiSkeletonLoader/>
         </div>
@@ -24,7 +24,7 @@
       <template v-else>
         <div class="flex flex-col gap-[1.25rem] md:gap-[1.5rem] mb-[3rem] md:mb-[4.5rem]">
           <UiCardComponent 
-            v-for="caseStudy in data" 
+            v-for="caseStudy in displayedCaseStudies" 
             :key="caseStudy._id"
             :item="caseStudy"
             route="caseStudies"
@@ -36,7 +36,7 @@
           <button 
             class="btn w-fit mx-auto text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem] hover:bg-[#0d3a7a] transition-colors"
             @click="loadMore"
-            :disabled="isLoadingMore || !hasMore"
+            :disabled="isLoadingMore"
           >
             <span v-if="isLoadingMore">Loading...</span>
             <span v-else>Load More</span>
@@ -49,16 +49,15 @@
 
 <script setup>
 const sanityClient = useSanityClient()
-const { urlFor } = useSanityImage()
 
 // Pagination
 const pageSize = 5
 const currentPage = ref(1)
 const totalCaseStudies = ref(0)
+const displayedCaseStudies = ref([])
 
 // Data fetching with useAsyncData
 const { 
-  data, 
   pending, 
   error, 
   refresh 
@@ -67,7 +66,7 @@ const {
   async () => {
     const start = (currentPage.value - 1) * pageSize
     const query = groq`{
-      "caseStudies": *[_type == "caseStudy"] | order(publishedAt desc) [${start}...${start + pageSize - 1}] {
+      "caseStudies": *[_type == "caseStudy"] | order(publishedAt desc) [${start}...${start + pageSize}] {
         _id,
         title,
         slug,
@@ -82,19 +81,25 @@ const {
     
     const result = await sanityClient.fetch(query)
     totalCaseStudies.value = result.total
+    
+    // Append new case studies to the displayed list
+    displayedCaseStudies.value = [
+      ...displayedCaseStudies.value,
+      ...result.caseStudies
+    ]
+    
     return result.caseStudies
   },
-   {
-    // Key changes to fix routing delay:
-    server: false, // Fetch only on client-side
-    lazy: true,    // Don't block navigation
-    immediate: false // Don't fetch on component mount
+  {
+    server: false,
+    lazy: true,
+    immediate: false
   }
 )
 
 // Computed
 const hasMore = computed(() => {
-  return data.value?.length && data.value.length < totalCaseStudies.value
+  return displayedCaseStudies.value.length < totalCaseStudies.value
 })
 
 const isLoadingMore = computed(() => {
@@ -109,21 +114,21 @@ async function loadMore() {
   await refresh()
   
   // Smooth scroll to new items
-  nextTick(() => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth'
-    })
-  })
+  // nextTick(() => {
+  //   window.scrollTo({
+  //     top: document.body.scrollHeight,
+  //     behavior: 'smooth'
+  //   })
+  // })
 }
 
-onMounted(async ()=>{
+onMounted(async () => {
   await refresh()
 })
 </script>
 
 <style scoped>
-.btn {
+  .btn {
   transition: all 0.3s ease;
   &:disabled {
     opacity: 0.6;

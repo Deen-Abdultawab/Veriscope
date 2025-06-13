@@ -4,7 +4,7 @@
       <h2 class="header-texts text-[#072042] mb-[1.5rem] md:mb-[2.5rem] text-[1.5rem] sm:text-[2rem] md:text-[2.5rem]">All Articles</h2>
       
       <!-- Loading State -->
-      <template v-if="pending">
+      <template v-if="pending && currentPage === 1">
         <div class="mb-[2.5rem] md:mb-[4.5rem]">
           <UiSkeletonLoader/>
         </div>
@@ -21,7 +21,7 @@
       </template>
 
       <!-- Empty State -->
-      <template v-else-if="!data?.length">
+      <template v-else-if="!displayedPosts.length">
         <h3 class="header-texts text-center py-[2rem] md:py-8 text-[1rem] sm:text-[1.25rem]">
           There are no Blog Posts at the moment, check back later...
         </h3>
@@ -31,7 +31,7 @@
       <template v-else>
         <div class="flex flex-col gap-[1rem] md:gap-[1.5rem] mb-[2.5rem] md:mb-[4.5rem]">
           <UiCardComponent 
-            v-for="blog in data" 
+            v-for="blog in displayedPosts" 
             :key="blog._id"
             route="Blogs"
             :item="blog"
@@ -39,7 +39,7 @@
         </div>
 
         <!-- Pagination -->
-        <div v-if="showLoadMore" class="flex justify-center">
+        <div v-if="hasMore" class="flex justify-center">
           <button 
             class="btn w-fit mx-auto text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem]"
             @click="loadMore"
@@ -58,50 +58,57 @@
 // Composables
 const { urlFor } = useSanityImage()
 const sanityClient = useSanityClient()
-const router = useRouter()
 
-// Configuration
-const pageSize = 5
+// Pagination configuration
+const pageSize = 2
 const currentPage = ref(1)
 const totalPosts = ref(0)
+const displayedPosts = ref([])
 
 // Data fetching
 const { 
-  data, 
   pending, 
   error, 
   refresh 
-} = await useAsyncData('blogPosts', async () => {
-  const start = (currentPage.value - 1) * pageSize
-  const end = start + pageSize
-  
-  const query = groq`{
-    "posts": *[_type == "blogPost"] | order(publishedAt desc) [${start}...${end}] {
-      _id,
-      title,
-      slug,
-      mainImage,
-      introduction,
-      publishedAt
-    },
-    "total": count(*[_type == "blogPost"])
-  }`
-  
-  const result = await sanityClient.fetch(query)
-  totalPosts.value = result.total
-  return result.posts
-},
- {
-    // Key changes to fix routing delay:
-    server: false, // Fetch only on client-side
-    lazy: true,    // Don't block navigation
-    immediate: false // Don't fetch on component mount
+} = await useAsyncData(
+  `blogPosts-page-${currentPage.value}`,
+  async () => {
+    const start = (currentPage.value - 1) * pageSize
+    const end = start + pageSize
+    
+    const query = groq`{
+      "posts": *[_type == "blogPost"] | order(publishedAt desc) [${start}...${end}] {
+        _id,
+        title,
+        slug,
+        mainImage,
+        introduction,
+        publishedAt
+      },
+      "total": count(*[_type == "blogPost"])
+    }`
+    
+    const result = await sanityClient.fetch(query)
+    totalPosts.value = result.total
+    
+    // Append new posts to the displayed list
+    displayedPosts.value = [
+      ...displayedPosts.value,
+      ...result.posts
+    ]
+    
+    return result.posts
+  },
+  {
+    server: false,
+    lazy: true,
+    immediate: false
   }
 )
 
-// Computed
-const showLoadMore = computed(() => {
-  return data.value?.length && (data.value.length < totalPosts.value)
+// Computed properties
+const hasMore = computed(() => {
+  return displayedPosts.value.length < totalPosts.value
 })
 
 const isLoadingMore = computed(() => {
@@ -116,19 +123,21 @@ const truncateText = (text, maxLength) => {
 }
 
 const loadMore = async () => {
+  if (!hasMore.value) return
+  
   currentPage.value++
   await refresh()
   
   // Smooth scroll to new items
-  nextTick(() => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth'
-    })
-  })
+  // nextTick(() => {
+  //   window.scrollTo({
+  //     top: document.body.scrollHeight,
+  //     behavior: 'smooth'
+  //   })
+  // })
 }
 
-onMounted(async ()=>{
+onMounted(async () => {
   await refresh()
 })
 </script>
