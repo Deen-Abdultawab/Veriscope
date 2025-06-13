@@ -26,8 +26,8 @@
                   <textarea v-model="form.message" name="message" rows="4" sm:rows="5" id="message" placeholder="Enter Your Message" class="small-texts"></textarea required>
                </article>
             </div>
-            <button type="submit" class="btn w-full sm:w-fit mt-[0.5rem]">
-               <span v-if="isSendindMail">Sending...</span>
+            <button type="submit" class="btn w-full sm:w-fit mt-[0.5rem] min-w-[10rem]">
+               <IconsSpinLoader v-if="isSendindMail" class="mx-auto"/>
                <span v-else>Send Message</span>
             </button>
             <p class="small-texts font-MuseoSans" :class="mailError? '!text-[red]' : '!text-[green]'">{{ status }}</p>

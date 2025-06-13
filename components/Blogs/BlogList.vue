@@ -41,12 +41,12 @@
         <!-- Pagination -->
         <div v-if="hasMore" class="flex justify-center">
           <button 
-            class="btn w-fit mx-auto text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem]"
+            class="btn w-fit mx-auto text-[0.875rem] min-w-[10rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem] hover:bg-[#0d3a7a] grid place-items-center"
             @click="loadMore"
             :disabled="isLoadingMore"
           >
             <span v-if="!isLoadingMore">Load More</span>
-            <span v-else>Loading...</span>
+            <IconsSpinLoader v-else/>
           </button>
         </div>
       </template>
@@ -56,7 +56,6 @@
 
 <script setup>
 // Composables
-const { urlFor } = useSanityImage()
 const sanityClient = useSanityClient()
 
 // Pagination configuration

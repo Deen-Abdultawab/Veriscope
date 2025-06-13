@@ -34,11 +34,11 @@
         <!-- Pagination -->
         <div v-if="hasMore" class="flex justify-center">
           <button 
-            class="btn w-fit mx-auto text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem] hover:bg-[#0d3a7a] transition-colors"
+            class="btn w-fit min-w-[10rem] mx-auto text-[0.875rem] md:text-[1rem] py-[0.5rem] md:py-[0.75rem] px-[1.5rem] hover:bg-[#0d3a7a] transition-colors grid place-items-center"
             @click="loadMore"
             :disabled="isLoadingMore"
           >
-            <span v-if="isLoadingMore">Loading...</span>
+            <IconsSpinLoader v-if="isLoadingMore"/>
             <span v-else>Load More</span>
           </button>
         </div>
@@ -51,7 +51,7 @@
 const sanityClient = useSanityClient()
 
 // Pagination
-const pageSize = 5
+const pageSize = 2
 const currentPage = ref(1)
 const totalCaseStudies = ref(0)
 const displayedCaseStudies = ref([])

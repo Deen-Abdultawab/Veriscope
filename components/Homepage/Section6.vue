@@ -18,7 +18,7 @@
                 </div>
                 <div class="flex justify-end">
                     <button class="btn" type="submit">
-                      <span v-if="isSendindMail">Sending...</span>
+                      <IconsSpinLoader v-if="isSendindMail" class="mx-auto"/>
                       <span v-else>Send Message</span>
                     </button>
                 </div>
