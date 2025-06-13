@@ -51,7 +51,7 @@
 const sanityClient = useSanityClient()
 
 // Pagination
-const pageSize = 2
+const pageSize = 5
 const currentPage = ref(1)
 const totalCaseStudies = ref(0)
 const displayedCaseStudies = ref([])

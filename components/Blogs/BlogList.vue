@@ -59,7 +59,7 @@
 const sanityClient = useSanityClient()
 
 // Pagination configuration
-const pageSize = 2
+const pageSize = 5
 const currentPage = ref(1)
 const totalPosts = ref(0)
 const displayedPosts = ref([])
