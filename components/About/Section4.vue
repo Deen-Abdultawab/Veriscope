@@ -11,12 +11,12 @@
             />
          </div>
          <div class="text-center mt-[1.5rem] w-[76.16%] mx-auto max-sm:w-[100%]">
-            <h3 class="header-texts text-[1.5rem] sm:text-[1.63rem] md:text-[1.75rem] mb-[1.5rem] sm:mb-[2rem] md:mb-[2.69rem]">Lead Strategist</h3>
+            <h3 class="header-texts text-[1.5rem] sm:text-[1.63rem] md:text-[1.75rem] mb-[1.5rem] sm:mb-[2rem] md:mb-[2.69rem]">{{ member.role }}</h3>
             <p class="small-texts text-[1rem] sm:text-[1.13rem] md:text-[1.25rem]">
-                With over 5 years of experience in digital marketing and strategy, Tobi has helped brands across Nigeria and the U.S. grow their digital presence. A certified member of the Digital Marketing Institute and a student of the Chartered Institute of Marketing (CIM), he brings together marketing insight, technical expertise, and a passion for helping businesses win online.
+               {{ member.descr1 }}
                 <br class="block">
                 <br class="block">
-                With a background in Economics and an MBA in Marketing, Tobi brings both strategy and structure to every project helping clients grow not just fast, but sustainably.
+                {{ member.descr2 }}
             </p>
          </div>
     </div>

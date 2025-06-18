@@ -8,7 +8,7 @@
         <article 
           v-for="mission in missions" 
           :key="mission.id"
-          class="border border-[#B5C8E1] rounded-[0.75rem] sm:rounded-[1rem] px-[1rem] sm:px-[1.25rem] md:px-[1.5rem] pt-[1rem] sm:pt-[1.25rem] md:pt-[1.5rem] pb-[2rem] sm:pb-[2.5rem] md:pb-[3rem] hover:shadow-lg transition-all"
+          class="border border-[#B5C8E1] rounded-[0.75rem] sm:rounded-[1rem] px-[1rem] sm:px-[1.25rem] md:px-[1.5rem] pt-[1rem] sm:pt-[1.25rem] md:pt-[1.5rem] pb-[2rem] sm:pb-[2.5rem] md:pb-[3rem] hover:shadow-lg transitionEffect"
         >
             <NuxtImg 
               :src="`/images/${mission.imgSrc}`" 
